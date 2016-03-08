@@ -1,6 +1,10 @@
 // Server.js
+	
+	// Server.js
 
 	//Set up
+	var config 			= require(process.cwd() + '/config/index.js');
+
 	var express 		= require('express');
 	var mongoose 		= require('mongoose');
 	var morgan 			= require('morgan');
@@ -9,7 +13,7 @@
 
 	var app = express();
 
-	mongoose.connect('mongodb://localhost:27017/local');
+	mongoose.connect(config.SERVER[config.ENV].);
 
 	app.use(express.static(__dirname + '/public'));
 	app.use(morgan('dev'));
